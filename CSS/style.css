@@ -1,0 +1,117 @@
+*{
+    font-family: 'Fredoka One';
+    font-weight: 400;
+}
+body{
+    height: 100vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(to top right, rgba(0,0,0,1) 0%, rgba(12,0,34,1) 51%, rgba(24,0,55,1) 100%);    
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    color: white;
+}
+header{
+    align-self: center;
+
+}
+
+form{
+    align-self: center;
+}
+.form-control, li{
+    font-size: 1.5rem;
+    width: 50rem;
+}
+.addItem{
+    position: absolute;
+    border: none;
+    background: none;
+}
+.fa-plus-circle{
+    position: absolute;
+    border: none;
+    background: none;
+    color: white;
+    opacity: .5;
+    font-size: 2rem;
+    transition: .25s ease;
+    cursor: pointer;
+
+}
+.fa-plus-circle:hover{
+    opacity: 1;
+    text-shadow: 0 0 10px #FFFFFF;
+
+}
+.complete, .remove{
+    position: relative;
+    padding: 5;
+    bottom:6px;
+    float: right;
+    border: none;
+    background: none;
+    color: white;
+    opacity: .5;
+    font-size: 2rem;
+    transition: .25s ease;
+}
+.complete:disabled, .remove:disabled{
+    opacity: .5;
+    transition: .5s ease;
+}
+.complete:enabled, .remove:enabled{
+    opacity: 1;
+    font-size: 2rem;
+    transition: .5s ease;
+    cursor: pointer;
+}
+.complete:enabled:hover, .remove:enabled:hover{
+    text-shadow: 0 0 10px #FFFFFF;
+}
+@keyframes bottomBorder{
+    0% { 
+        border-bottom: 5px solid rgba(24,0,55,1);
+    }
+    
+    100% { 
+        border-bottom: 5px solid rgb(38, 6, 80)
+    }
+}
+.itemDiv{
+    display: block;
+    padding: 1rem;
+    align-self: center;
+    border-bottom: 5px solid rgba(24,0,55,1);
+    transition: .35s ease;
+}
+
+.itemDiv:hover, .doneDiv:hover{
+    animation: bottomBorder 1s ease forwards;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
+    z-index: 11;
+}
+
+.doneDiv{
+    padding: 1rem;
+    align-self: center;
+    opacity: .4;
+    border-bottom: 5px solid rgba(24,0,55,1);
+    transition: .35s ease;
+}
+.doneDiv:hover{
+    opacity: .6;
+}
+li{
+    list-style-type: none;
+}
+#check, section{
+    margin-right:1rem;
+}
+.itemDone{
+    text-decoration: line-through;
+}
